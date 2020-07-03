@@ -11,3 +11,7 @@ body {
     background-size: cover;
 }
 
+.col-sm-6 {
+    border-radius: 1rem;
+    border: black;
+}

@@ -11,3 +11,6 @@ body {
     background-size: cover;
 }
 
+.form-group {
+    border-radius: 1rem;
+}

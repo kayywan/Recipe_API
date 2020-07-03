@@ -11,3 +11,7 @@ body {
     background-size: cover;
 }
 
+.container {
+    border-radius: 2%;
+    border: black;
+}
