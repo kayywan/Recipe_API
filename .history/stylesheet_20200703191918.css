@@ -1,10 +1,8 @@
-/* Body font style and font size */
 body {
     font-size: 2rem;
     font-family: 'Annie Use Your Telescope', cursive;
 }
 
-/* Font and image within jumbotron */
 .jumbotron {
     text-align: center;
     font-family: 'Annie Use Your Telescope', cursive;
