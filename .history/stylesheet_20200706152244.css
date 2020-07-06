@@ -1,6 +1,6 @@
 /* Body font style and font size */
 body {
-    font-size: 3rem;
+    font-size: 2rem;
     font-family: 'Annie Use Your Telescope', cursive;
     background-image: url(Assets/carrots-food-fresh-freshness-616404.jpg);
     background-position: center center;
@@ -13,20 +13,7 @@ body {
 .jumbotron {
     text-align: center;
     font-family: 'Annie Use Your Telescope', cursive;
-    background: url(Assets/agriculture-bright-cereal-close-up-547263.jpg);
-    background-position: center center;
-    background-size: cover;
-}
-
-/* Search Results Text */
-.panel-heading {
-    margin-top: 2rem;
-    text-align: center;
-}
-
-/* Results Area -XXXX */
-.panel-body {
-    text-align: center;
+    background: url(Assets/three-brown-fruits-on-white-textile-800356.jpg) top center no-repeat;
 }
 
   @media screen and (max-width: 768px) {
