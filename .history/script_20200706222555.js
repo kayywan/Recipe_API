@@ -12,7 +12,7 @@ $.ajax({
 
 })
     
-// javascript/jQuery snippet 
+// javascript/jQuery snippet of the code below
 var settings = {
 	"async": true,
 	"crossDomain": true,
@@ -29,6 +29,27 @@ $.ajax(settings).done(function (response) {
 });
     
     
+ // node.js code snippet   
+    var unirest = require("unirest");
+
+var req = unirest("GET", "https://tasty.p.rapidapi.com/recipes/detail");
+
+req.query({
+	"id": "5586"
+});
+
+req.headers({
+	"x-rapidapi-host": "tasty.p.rapidapi.com",
+	"x-rapidapi-key": "ac032b7765msh7b7ea8d251892bbp18630ejsnfccfef5696ae",
+	"useQueryString": true
+});
+
+
+req.end(function (res) {
+	if (res.error) throw new Error(res.error);
+
+	console.log(res.body);
+});
 
 
 

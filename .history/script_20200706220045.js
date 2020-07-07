@@ -12,23 +12,31 @@ $.ajax({
 
 })
     
-// javascript/jQuery snippet 
-var settings = {
-	"async": true,
-	"crossDomain": true,
-	"url": "https://tasty.p.rapidapi.com/recipes/detail?id=5586",
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "tasty.p.rapidapi.com",
-		"x-rapidapi-key": "ac032b7765msh7b7ea8d251892bbp18630ejsnfccfef5696ae"
-	}
-}
+    
+    
+    
+    
+    
+    var unirest = require("unirest");
 
-$.ajax(settings).done(function (response) {
-	console.log(response);
+var req = unirest("GET", "https://tasty.p.rapidapi.com/recipes/detail");
+
+req.query({
+	"id": "5586"
 });
-    
-    
+
+req.headers({
+	"x-rapidapi-host": "tasty.p.rapidapi.com",
+	"x-rapidapi-key": "ac032b7765msh7b7ea8d251892bbp18630ejsnfccfef5696ae",
+	"useQueryString": true
+});
+
+
+req.end(function (res) {
+	if (res.error) throw new Error(res.error);
+
+	console.log(res.body);
+});
 
 
 
