@@ -66,12 +66,22 @@
           </div>
           </div>
         </div>
-      </form>
 
-      
-    <div class="container">
+        <div class="container">
         <div class="form-group">
-            <label for="pwd">Number of Recipes:</label>
+            <div class="row">
+                <div class="col-sm-12">
+          <label for="exampleFormControlInput1">Are there allergies? If so, list them below</label>
+          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="i.e. milk, nuts, soy, gluten">
+          </div>
+        </div>
+        </div>
+        </div>
+      </form>
+    <div class="container">
+
+        <div class="form-group">
+            <label for="pwd">Number of Records to Retrieve:</label>
             <select id="article-count" class="custom-select" aria-labelledby="dropdownMenuButton">
               <option selected value="1">1</option>
               <!-- Setting the option for 5 as default -->
@@ -79,7 +89,7 @@
               <option value="10">10</option>
             </select>
           </div>
-
+          
         <div class="row">
             <button type="button" class="btn btn-primary btn-lg btn-block">SUBMIT</button>
             <button type="button" class="btn btn-secondary btn-lg btn-block">CLEAR</button>

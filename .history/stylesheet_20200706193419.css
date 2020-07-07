@@ -29,14 +29,6 @@ body {
     text-align: center;
 }
 
-.card-header {
-    text-align: center;
-}
-
-.label {
-    text-align: center;
-}
-
   @media screen and (max-width: 768px) {
     .jumbotron {
       padding-top:20px;
