@@ -12,6 +12,8 @@ var ingredients = [];
 
 
 //Functions
+function displayRecipes() {
+	$.ajax({
 
 		var settings = {
 			"async": true,
@@ -22,18 +24,10 @@ var ingredients = [];
 				"x-rapidapi-host": "tasty.p.rapidapi.com",
 				"x-rapidapi-key": "ac032b7765msh7b7ea8d251892bbp18630ejsnfccfef5696ae"
 			}
-		} 
-		console.log("Still Hungry");
-
-	document.getElementById('getRecipe').addEventListener('click', getRecipe);
-
-	function getRecipe(){
-		console.log("getRecipe");
-	}
+		}
+	}).then(function(response) {
 	
-	
-
-
+		console.log(response);
 	
 
 	

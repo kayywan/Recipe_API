@@ -24,16 +24,6 @@ var ingredients = [];
 			}
 		} 
 		console.log("Still Hungry");
-
-	document.getElementById('getRecipe').addEventListener('click', getRecipe);
-
-	function getRecipe(){
-		console.log("getRecipe");
-	}
-	
-	
-
-
 	
 
 	
