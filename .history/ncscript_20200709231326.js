@@ -4,6 +4,7 @@ $(document).ready(function() {
 
 
 // Search Parameters
+var numRecipes = 0;
 var ingredients = [];
 
 
@@ -27,7 +28,7 @@ fetch("https://tasty.p.rapidapi.com/recipes/list?q=spinach&from=0&sizes=20", {
 
 document.getElementById("getRecipe").addEventListener('click', displayRecipes);
 
-function displayRecipes() {
-	document.getElementById("results_list").innerHTML = displayRecipes;
-}
+//function displayRecipes() {
+	//document.getElementById("results_list").innerHTML = displayRecipes;
+//}
 

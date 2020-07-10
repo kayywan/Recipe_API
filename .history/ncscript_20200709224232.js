@@ -4,6 +4,8 @@ $(document).ready(function() {
 
 
 // Search Parameters
+var ul = document.getElementById("recipes"); // Get the list where we will place our recipes
+var numRecipes = 0;
 var ingredients = [];
 
 
@@ -30,4 +32,50 @@ document.getElementById("getRecipe").addEventListener('click', displayRecipes);
 function displayRecipes() {
 	document.getElementById("results_list").innerHTML = displayRecipes;
 }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+
+	
+	
+	
+	
+
+
+	
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

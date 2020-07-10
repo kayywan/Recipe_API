@@ -4,6 +4,8 @@ $(document).ready(function() {
 
 
 // Search Parameters
+var displayRecipes = "";
+var numRecipes = 0;
 var ingredients = [];
 
 
