@@ -4,7 +4,7 @@ $(document).ready(function() {
 
 
 // Search Parameters
-
+var summaryObj = {};
 var title = null;
 var thumbnailURL = null;
 var ingredient = null;
@@ -13,37 +13,20 @@ var measurements = null;
 
 //Functions
 
-
-
-var settings = {
-	"async": true,
-	"crossDomain": true,
-	"url": "https://tasty.p.rapidapi.com/recipes/list?tags=under_30_minutes&q=kale&from=0&sizes=20",
+fetch("https://tasty.p.rapidapi.com/recipes/list?q=spinach&from=0&sizes=20", {
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "tasty.p.rapidapi.com",
 		"x-rapidapi-key": "ac032b7765msh7b7ea8d251892bbp18630ejsnfccfef5696ae"
 	}
-}
-
-$.ajax(settings).done(function (response) {
+})
+.then(response => {
 	console.log(response);
-
-	document.getElementById
+	displayRecipes(response);
+})
+.catch(err => {
+	console.log(err);
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

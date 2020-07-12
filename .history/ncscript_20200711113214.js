@@ -13,8 +13,6 @@ var measurements = null;
 
 //Functions
 
-
-
 var settings = {
 	"async": true,
 	"crossDomain": true,

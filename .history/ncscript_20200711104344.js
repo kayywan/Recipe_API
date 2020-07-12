@@ -4,7 +4,7 @@ $(document).ready(function() {
 
 
 // Search Parameters
-
+var summaryObj = {};
 var title = null;
 var thumbnailURL = null;
 var ingredient = null;
@@ -12,8 +12,6 @@ var credits = null;
 var measurements = null;
 
 //Functions
-
-
 
 var settings = {
 	"async": true,
@@ -28,8 +26,6 @@ var settings = {
 
 $.ajax(settings).done(function (response) {
 	console.log(response);
-
-	document.getElementById
 });
 
 

@@ -28,6 +28,7 @@ var settings = {
 
 $.ajax(settings).done(function (response) {
 	console.log(response);
+	updatePage(response);
 
 	document.getElementById
 });

@@ -39,9 +39,8 @@ body {
     justify-content: center;
 }
 
-.card-header {
-    background-color: dodgerblue;
-    color: white;
+.card {
+    background-color: blue;
 }
 
 .card-header {

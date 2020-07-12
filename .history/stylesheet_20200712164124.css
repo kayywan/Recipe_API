@@ -37,11 +37,7 @@ body {
     margin-top: 2rem;
     display: flex;
     justify-content: center;
-}
-
-.card-header {
-    background-color: dodgerblue;
-    color: white;
+    background-color: blue;
 }
 
 .card-header {

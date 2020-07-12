@@ -33,15 +33,9 @@ body {
     font-size: 45px;
 }
 
-.row {
-    margin-top: 2rem;
+.recipe-placeholder {
     display: flex;
     justify-content: center;
-}
-
-.card-header {
-    background-color: dodgerblue;
-    color: white;
 }
 
 .card-header {
