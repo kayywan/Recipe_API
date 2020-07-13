@@ -1,34 +1,33 @@
-//API Call
-var queryAmount = $('returnQuery').val();    
-var queryJSON = JSON.stringify(queryAmount); 
-var ingredient = $('ingredient1').val();
-var ingJSON = JSON.stringify(ingredient);
-var settings = {    
-	"async": true,
-	"crossDomain": true,
-	"url": "https://tasty.p.rapidapi.com/recipes/list?",
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "tasty.p.rapidapi.com",
-        "x-rapidapi-key": "45d544cce5msh3da1dba9529989bp135592jsn98c4e08591b1"
-    
+//set up variables
 
-	}
+var baseURL = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=7592bc937593472bbd3b2ff7b0cb39e7";
+var apiKey = "7592bc937593472bbd3b2ff7b0cb39e7"
+var mainIng = "";
+var numResults = 0;
+var recipeCounter = "";
+
+//AJAX call here
+function searchRecipes(numRecipes, queryURL) {
+	$.ajax({url: queryURL, method: "GET"})
+			.done (function(response) {
+				console.log(response)
+				console.log(queryURL)
+			})
 }
-var queryURL = $(settings,"url");
-alert(queryURL);
+//main processes
+// 1. retrieve user inputs
+// 2. use those variables to run an ajax call to spoonacular
+// 3. break down the spoonacular object into useable fields
+// 4. dynamically generate content
 
-//functions
+// 5. dealing with 'edge cases'-- bugs, misspelled ingredients
 
-$.ajax(settings).done(function (response) {
-    console.log(response);
-    
-})
-//main process
-
-$('#submitBtn').on('click', function() {
-    $('#ingredient1').val().trim();
-    var newURL = settings.
-    console.log(settings.url);
-
+$("#subBtn").on('click', function() {
+	alert('test');
+	mainIng = $("#mainIngredient").val().trim();
+	console.log(mainIng);
+	var newURL = baseURL + "&q=" + mainIng;
+	console.log(newURL);
+	searchRecipes (5, baseURL)
+	return false;
 })
