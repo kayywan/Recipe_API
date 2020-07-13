@@ -17,7 +17,7 @@ var numRecipes = "";
 
 for (var i=0; i < numRecipes; i++) {
 	title = recipeObj.items.result[i].title;
-	//summary = recipeObj.items.result[i].summary;
+	summary = recipeObj.items.result[i].summary;
 	extendedIngredients = recipeObj.items.result[i].extendedIngredients;
 	instructions = recipeObj.items.result[i].instructions;
 	sourceURL = recipeObj.items.result[i].sourceURL;
@@ -39,18 +39,7 @@ for (var i=0; i < numRecipes; i++) {
 
 	$("#recipeList").append($recipeList);
 
-	var $recipeListItem = $("<li class='list-group-item recipeHeadline'>");
-
-	if (title) {
-		$recipeListItem.append(
-			"<span class='label label-primary'>" +
-			"</span>" + title
-		);
-	}
-
-	if (summaryObj) {
-		$recipeListItem.append("<h5>Summary: " + summaryObj + "</h5>");
-	}
+	
 
 } 
 }

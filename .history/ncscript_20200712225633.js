@@ -39,18 +39,7 @@ for (var i=0; i < numRecipes; i++) {
 
 	$("#recipeList").append($recipeList);
 
-	var $recipeListItem = $("<li class='list-group-item recipeHeadline'>");
 
-	if (title) {
-		$recipeListItem.append(
-			"<span class='label label-primary'>" +
-			"</span>" + title
-		);
-	}
-
-	if (summaryObj) {
-		$recipeListItem.append("<h5>Summary: " + summaryObj + "</h5>");
-	}
 
 } 
 }
