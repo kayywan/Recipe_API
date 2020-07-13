@@ -7,7 +7,7 @@ function buildQueryURL() {
 
     var queryParams = { "api-key": "ac032b7765msh7b7ea8d251892bbp18630ejsnfccfef5696ae"};
 
-    queryParams.q = $("#main-ingredient").val().trim();
+    queryParams.q = $("#")
 }
 
 var settings = {

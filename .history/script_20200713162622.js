@@ -5,9 +5,7 @@ $(document).ready(function(){
 function buildQueryURL() {
     var queryURL = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?number=";
 
-    var queryParams = { "api-key": "ac032b7765msh7b7ea8d251892bbp18630ejsnfccfef5696ae"};
-
-    queryParams.q = $("#main-ingredient").val().trim();
+    var queryParams = { "api-key": "ac032b7765msh7b7ea8d251892bbp18630ejsnfccfef5696ae"}
 }
 
 var settings = {
