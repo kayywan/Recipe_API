@@ -9,7 +9,7 @@ $(document).ready(function() {
 
 function buildQueryURL() {
     
-    var queryURL = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?number=";
+    var queryURL = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/";
 
     var queryParams = { "api-key": "ac032b7765msh7b7ea8d251892bbp18630ejsnfccfef5696ae"};
 
@@ -17,20 +17,20 @@ function buildQueryURL() {
 
     //If user provides a second ingredient 
 
-    var ingredient1 = $("ingredient-1").val().trim();
+    var ingredient = $("ingredient2").val().trim();
 
-    if (parseInt(ingredient1)) {
+    if (parseInt(ingredient)) {
         queryParams.ingredient;
     }
     // If a user provides a third ingredient
 
-        var ingredient2 = $("ingredient-2").val().trim();
+        var ingredient2 = $("ingredient3").val().trim();
         if (parseInt(ingredient2)) {
             queryParams.ingredient;
         }  
     // If a user provides a fourth ingredient
 
-            var ingredient3 = $("ingredient-3").val().trim();
+            var ingredient3 = $("ingredient4").val().trim();
             if (parseInt(ingredient3)) {
                 queryParams.ingredient;            
             }
@@ -81,10 +81,10 @@ function buildQueryURL() {
 
         // Log section, and append to document if it exists 
 
-        var instructions = recipe.instructions;
+        var section = recipe.section_name;
 
-        if (instructions) {
-            $recipeListItem.append("<h5>Section: " + instructions + "</h5>");
+        if (section) {
+            $recipeListItem.append("<h5>Section: " + section + "</h5>");
         }
 
         // Log ingredients 
@@ -95,7 +95,7 @@ function buildQueryURL() {
         }
 
         // Append and log URL 
-        $recipeListItem.append("<a href='" + recipe.sourceURL + "'>" + recipe.sourceURL + "</a>");
+        $recipeListItem.append("<a href='" + recipe.url + "'>" + recipe.url + "</a>");
 
     }    
     }
@@ -141,5 +141,5 @@ var settings = {
             
         });
 
-         $("#clear-all").on("click", clear);
+        $("#clear-all").on("click", clear);
     

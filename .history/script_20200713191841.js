@@ -17,25 +17,9 @@ function buildQueryURL() {
 
     //If user provides a second ingredient 
 
-    var ingredient1 = $("ingredient-1").val().trim();
+    
 
-    if (parseInt(ingredient1)) {
-        queryParams.ingredient;
-    }
-    // If a user provides a third ingredient
-
-        var ingredient2 = $("ingredient-2").val().trim();
-        if (parseInt(ingredient2)) {
-            queryParams.ingredient;
-        }  
-    // If a user provides a fourth ingredient
-
-            var ingredient3 = $("ingredient-3").val().trim();
-            if (parseInt(ingredient3)) {
-                queryParams.ingredient;            
-            }
-    }
-
+    
 /** * takes API data (JSON/object) and turns it into elements on the page
     * @param {object} recipeData - object containing recipe data
 */        
@@ -81,10 +65,10 @@ function buildQueryURL() {
 
         // Log section, and append to document if it exists 
 
-        var instructions = recipe.instructions;
+        var section = recipe.section_name;
 
-        if (instructions) {
-            $recipeListItem.append("<h5>Section: " + instructions + "</h5>");
+        if (section) {
+            $recipeListItem.append("<h5>Section: " + section + "</h5>");
         }
 
         // Log ingredients 
@@ -95,7 +79,7 @@ function buildQueryURL() {
         }
 
         // Append and log URL 
-        $recipeListItem.append("<a href='" + recipe.sourceURL + "'>" + recipe.sourceURL + "</a>");
+        $recipeListItem.append("<a href='" + recipe.url + "'>" + recipe.url + "</a>");
 
     }    
     }

@@ -95,7 +95,7 @@ function buildQueryURL() {
         }
 
         // Append and log URL 
-        $recipeListItem.append("<a href='" + recipe.sourceURL + "'>" + recipe.sourceURL + "</a>");
+        $recipeListItem.append("<a href='" + recipe.url + "'>" + recipe.url + "</a>");
 
     }    
     }

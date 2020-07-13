@@ -81,10 +81,10 @@ function buildQueryURL() {
 
         // Log section, and append to document if it exists 
 
-        var instructions = recipe.instructions;
+        var section = recipe.section_name;
 
-        if (instructions) {
-            $recipeListItem.append("<h5>Section: " + instructions + "</h5>");
+        if (section) {
+            $recipeListItem.append("<h5>Section: " + section + "</h5>");
         }
 
         // Log ingredients 
@@ -95,7 +95,7 @@ function buildQueryURL() {
         }
 
         // Append and log URL 
-        $recipeListItem.append("<a href='" + recipe.sourceURL + "'>" + recipe.sourceURL + "</a>");
+        $recipeListItem.append("<a href='" + recipe.url + "'>" + recipe.url + "</a>");
 
     }    
     }
@@ -122,8 +122,7 @@ function buildQueryURL() {
           url: queryURL,
           method: "GET"
       }).then(updatePage);
-    });
-   
+    })
 
 var settings = {
 			"async": true,
@@ -140,6 +139,4 @@ var settings = {
             console.log(response);
             
         });
-
-         $("#clear-all").on("click", clear);
     

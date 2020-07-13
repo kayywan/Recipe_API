@@ -81,10 +81,10 @@ function buildQueryURL() {
 
         // Log section, and append to document if it exists 
 
-        var instructions = recipe.instructions;
+        var section = recipe.section_name;
 
-        if (instructions) {
-            $recipeListItem.append("<h5>Section: " + instructions + "</h5>");
+        if (section) {
+            $recipeListItem.append("<h5>Section: " + section + "</h5>");
         }
 
         // Log ingredients 
@@ -95,7 +95,7 @@ function buildQueryURL() {
         }
 
         // Append and log URL 
-        $recipeListItem.append("<a href='" + recipe.sourceURL + "'>" + recipe.sourceURL + "</a>");
+        $recipeListItem.append("<a href='" + recipe.url + "'>" + recipe.url + "</a>");
 
     }    
     }
@@ -118,28 +118,19 @@ function buildQueryURL() {
 
       var queryURL = buildQueryURL();
 
-      $.ajax({
-          url: queryURL,
-          method: "GET"
-      }).then(updatePage);
-    });
-   
-
-var settings = {
-			"async": true,
-			"crossDomain": true,
-			"url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?number=",
-			"method": "GET",
-			"headers": {
-				"x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-				"x-rapidapi-key": "ac032b7765msh7b7ea8d251892bbp18630ejsnfccfef5696ae"
-			}
-		}
-		
-		$.ajax(settings).done(function (response) {
-            console.log(response);
-            
-        });
-
-         $("#clear-all").on("click", clear);
+      var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?number=",
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+            "x-rapidapi-key": "ac032b7765msh7b7ea8d251892bbp18630ejsnfccfef5696ae"
+        }
+    }
     
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+        
+    });
+    })   

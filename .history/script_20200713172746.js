@@ -8,7 +8,6 @@ $(document).ready(function() {
 });
 
 function buildQueryURL() {
-    
     var queryURL = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?number=";
 
     var queryParams = { "api-key": "ac032b7765msh7b7ea8d251892bbp18630ejsnfccfef5696ae"};
@@ -56,74 +55,19 @@ function buildQueryURL() {
 
         $("#recipe-section").append($recipeList);
 
-        // If the recipe has a title, log and append to $recipeList
+        // If the article has a title, log and append to $recipeList
 
         var title = recipe.title;
         var $recipeListItem = $("<li class='list-group-item recipeTitle'>");
 
         if (title && title.main) {
             console.log(title.main);
-            $recipeListItem.append("<span class='label label-primary'>" +
-            recipeCount +
-            "</span" +
-            title.main
-            );
         }
 
-        // If the recipe has a summary, log and append to $recipeList
-
-        var summary = recipe.summary;
-
-        if (summary && summary.original) {
-            console.log(summary.original);
-            $recipeListItem.append("<h5>" + summary.original + "</h5>");
-        }
-
-        // Log section, and append to document if it exists 
-
-        var instructions = recipe.instructions;
-
-        if (instructions) {
-            $recipeListItem.append("<h5>Section: " + instructions + "</h5>");
-        }
-
-        // Log ingredients 
-        var extendedIngredients = recipe.extendedIngredients;
-
-        if (extendedIngredients) {
-            $recipeListItem.append("<h5>" + recipe.extendedIngredients + "</h5>");
-        }
-
-        // Append and log URL 
-        $recipeListItem.append("<a href='" + recipe.sourceURL + "'>" + recipe.sourceURL + "</a>");
 
     }    
+        
     }
-
-    function clear() {
-        $("#recipe-section").empty();
-    }
-
-    // Click Handlers
-    // ============================================
-
-    // .on("click") function associated with the Search Button
-    $("#run-search").on("click", function(event) {
-        // This line allows  us to take advantage of the html submit
-        // Can hit enter on the keyboard and it initiates search
-        // Prevents page from reloading on form submit
-      event.preventDefault();
-      
-      clear();
-
-      var queryURL = buildQueryURL();
-
-      $.ajax({
-          url: queryURL,
-          method: "GET"
-      }).then(updatePage);
-    });
-   
 
 var settings = {
 			"async": true,
@@ -140,6 +84,4 @@ var settings = {
             console.log(response);
             
         });
-
-         $("#clear-all").on("click", clear);
     
