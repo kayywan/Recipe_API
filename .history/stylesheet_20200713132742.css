@@ -13,14 +13,7 @@ body {
 .header {
     text-align: center;
     margin-top: 15rem;
-}
-
-.display-4 {
-    font-size: 7rem;
-}
-
-.lead {
-    font-size: 3rem;
+    font-size: 70px;
 }
 
 /* Search Results Text */
