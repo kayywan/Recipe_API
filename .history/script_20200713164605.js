@@ -1,8 +1,3 @@
-/**
- * pulls information from the form and build the query URL
- * @returns {string} URL for Spoonacular API based on form inputs
- */
-
 $(document).ready(function() {
     console.log("Lets Eat!");
 });
@@ -15,51 +10,21 @@ function buildQueryURL() {
     queryParams.q = $("#main-ingredient").val().trim();
 
     //If user provides a second ingredient 
-
     var ingredient1 = $("ingredient-1").val().trim();
 
     if (parseInt(ingredient1)) {
         queryParams.ingredient;
     }
     // If a user provides a third ingredient
-
         var ingredient2 = $("ingredient-2").val().trim();
         if (parseInt(ingredient2)) {
             queryParams.ingredient;
         }  
-    // If a user provides a fourth ingredient
-
+    // If a user provides a fourth ingredient          
             var ingredient3 = $("ingredient-3").val().trim();
             if (parseInt(ingredient3)) {
                 queryParams.ingredient;            
             }
-    }
-
-/** * takes API data (JSON/object) and turns it into elements on the page
-    * @param {object} recipeData - object containing recipe data
-*/        
-    function updatePage(recipeData) {
-        var numRecipes = $("#recipe-count").val();
-        console.log(recipeData);
-        console.log("--------------------");
-
-    for (var i = 0; i < numRecipes; i++) {
-        // Get specific recipe info for our current index
-        var recipe = recipeData.response.docs[i];
-
-        // Increase the recipeCount (track recipe # - starting at 1)
-        var recipeCount = i + 1;
-
-        var $recipeList = $("<ul>");
-        $recipeList.addClass("list-group");
-
-        $("#recipe-section").append($recipeList);
-
-        
-
-
-    }    
-        
     }
 
 var settings = {

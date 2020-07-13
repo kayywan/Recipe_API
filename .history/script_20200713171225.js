@@ -41,24 +41,6 @@ function buildQueryURL() {
     function updatePage(recipeData) {
         var numRecipes = $("#recipe-count").val();
         console.log(recipeData);
-        console.log("--------------------");
-
-    for (var i = 0; i < numRecipes; i++) {
-        // Get specific recipe info for our current index
-        var recipe = recipeData.response.docs[i];
-
-        // Increase the recipeCount (track recipe # - starting at 1)
-        var recipeCount = i + 1;
-
-        var $recipeList = $("<ul>");
-        $recipeList.addClass("list-group");
-
-        $("#recipe-section").append($recipeList);
-
-        
-
-
-    }    
         
     }
 
