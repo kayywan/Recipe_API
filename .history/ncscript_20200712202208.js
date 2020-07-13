@@ -26,7 +26,6 @@ for (var i=0; i < numRecipes; i++) {
 	
 
 } 
-}
 
 var settings = {
 	"async": true,
@@ -42,3 +41,4 @@ var settings = {
 $.ajax(settings).done(function (response) {
 	console.log(response);
 });
+}

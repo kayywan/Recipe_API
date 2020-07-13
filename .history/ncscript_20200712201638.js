@@ -3,11 +3,13 @@ $(document).ready(function() {
 });
 
 var title = "";
+var sourceURL = "";
+var image = "";
 var summary = "";
 var extendedIngredients = "";
 var instructions = "";
-var sourceURL = "";
-var image = "";
+
+init();
 
 function updatePage(recipeObj) {
 
@@ -16,17 +18,8 @@ function updatePage(recipeObj) {
 var numRecipes = "";
 
 for (var i=0; i < numRecipes; i++) {
-	title = recipeObj.items.result[i].title;
-	summary = recipeObj.items.result[i].summary;
-	extendedIngredients = recipeObj.items.result[i].extendedIngredients;
-	instructions = recipeObj.items.result[i].instructions;
-	sourceURL = recipeObj.items.result[i].sourceURL;
-	image = recipeObj.items.result[i].label
-
 	
-
 } 
-}
 
 var settings = {
 	"async": true,
@@ -42,3 +35,4 @@ var settings = {
 $.ajax(settings).done(function (response) {
 	console.log(response);
 });
+}
