@@ -120,10 +120,6 @@ $(document).ready(function () {
       updatePage(response);
     });
   });
-
-  function newFunction() {
-      document.getElementById("newForm").reset();
-  }
   
   
  
