@@ -1,91 +1,76 @@
-/**
- * pulls information from the form and build the query URL
- * @returns {string} URL for Spoonacular API based on form inputs
- */
-
 $(document).ready(function () {
   console.log("Lets Eat!");
 });
 
-/** * takes API data (JSON/object) and turns it into elements on the page
- * @param {object} recipeData - object containing recipe data
- */
-
 function updatePage(recipeData) {
   var numRecipes = $("#recipe-count").val();
   console.log(recipeData);
-  console.log("--------------------");
 
-  for (var i = 0; i < numRecipes; i++) {
+  for (let i = 0; i < numRecipes; i++) {
     // Get specific recipe info for our current index
     var recipe = recipeData.recipes[i];
 
     // Increase the recipeCount (track recipe # - starting at 1)
     var recipeCount = i + 1;
 
-    var $recipeList = $("<ul>");
-    $recipeList.addClass("list-group");
-
-    $("#recipe-section").append($recipeList);
-
-    // If the recipe has a title, log and append to $recipeList
+    // If the recipe has a title, log and append to recipeList
 
     var title = recipe.title;
-    var $recipeListItem = $("<li class='list-group-item recipeTitle'>");
+
+    var recipeList =
+      "<ul class='list-group'>" + " <li class='list-group-item recipeTitle'>";
 
     if (title) {
       console.log(title);
-      $recipeListItem.append(
-        "<span class='label label-primary'>" + recipeCount + "</span>" + title
-      );
+      recipeList +=
+        "<span class='label label-primary'>" +
+        recipeCount +
+        ".  </span>" +
+        title;
     }
 
-    // If the recipe has a summary, log and append to $recipeList
+    // If the recipe has a summary, log and append to recipeList
 
     var summary = recipe.summary;
 
     if (summary) {
       console.log(summary);
-      $recipeListItem.append("<h5>" + summary + "</h5>");
+      recipeList += "<h5>" + summary + "</h5>";
     }
 
-    // Log section, and append to document if it exists
+    // Log instructions, and append to document if it exists
 
     var instructions = recipe.instructions;
 
     if (instructions) {
-      $recipeListItem.append("<h5>Section: " + instructions + "</h5>");
+      recipeList += "<h5>Section: " + instructions + "</h5>";
     }
 
     // Log ingredients
-    var extendedIngredients = recipe.extendedIngredients;
+    var extendedIngredients = Object.values(recipe.extendedIngredients);
 
     if (extendedIngredients) {
-      $recipeListItem.append("<h5>" + recipe.extendedIngredients + "</h5>");
+      recipeList +=
+        "<h5>" +
+        "There are " +
+        extendedIngredients.length +
+        " extended ingredients. </h5>";
     }
 
     // Append and log URL
-    $recipeListItem.append(
-      "<a href='" + recipe.sourceURL + "'>" + recipe.sourceURL + "</a>"
-    );
+    var sourceURL = recipe.sourceUrl;
+    if (sourceURL) {
+      recipeList += "<a href='" + sourceURL + "'>" + sourceURL + "</a>";
+    }
+    $("#recipe-section").append(recipeList);
   }
 }
 
-// Function to empty out the articles
-function clear() {
-  $("#recipe-section").empty();
-}
-// Click Handlers
-// ============================================
-
 // .on("click") function associated with the Search Button
 $("#run-search").on("click", function (event) {
-  // This line allows  us to take advantage of the html submit
-  // Can hit enter on the keyboard and it initiates search
-  // Prevents page from reloading on form submit
   event.preventDefault();
-
   clear();
+
   var ingredient = $("#main-ingredient").val().trim();
   //If user provides a second ingredient
   var ingredient1 = $("#ingredient-2").val().trim();
@@ -114,7 +99,18 @@ $("#run-search").on("click", function (event) {
 
   $.ajax(settings).done(function (response) {
     console.log(response);
+
+    updatePage(response);
   });
 });
+
+// Function to empty out the recipes
+function clear() {
+  $("#recipe-section").empty();
+  // $("#main-ingredient").empty();
+  // $("#ingredient-2").empty();
+  // $("#ingredient-3").empty();
+  // $("#ingredient-4").empty();
+}
 
 $("#clear-all").on("click", clear);

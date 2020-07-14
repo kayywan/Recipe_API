@@ -75,8 +75,7 @@
           </div>
 
         <div class="row">
-            <!--Using type="submit" allows the user to hit enter as well as click submit-->
-
+            <!--buttons -->
             <button type="submit" id="run-search" class="btn btn-primary btn-lg btn-block">SEARCH</button>
             <p id="results"></p>
             <button type="button" id="clear-all" class="btn btn-secondary btn-lg btn-block">CLEAR</button>
@@ -86,37 +85,21 @@
     
     <div class="container">
 
+      <!-- handle all of the retrieved recipes -->
     <div class="row">
       <div class="col-sm-12">
         <br>
-        <!-- This card will initially be made up of a card and wells for each of the articles retrieved -->
         <div class="card">
-          <!-- card Heading for the retrieved articles box -->
+          <!-- card Heading for the retrieved recipes box -->
           <div class="card-header">
-            <strong>
-              <i class="fa fa-table"></i> R e c i p e s</strong>
+           <i class="fa fa-table"></i> R e c i p e s
           </div>
-    </div>      
-    
-      <!-- Footer Region -->
-      <div class="row">
-        <div class="col-sm-12">
-          <!-- Line Break followed by closing -->
-          <hr />
-          <h4 class="text-center">
-            <small>Enjoy Your Meal!<i class="fa fa-heart"></i>
-            </small>
-          </h4>
-        </div>
-  
-  
-  
-
+          <!-- This main card will hold each of the resulting recipes -->
           <div class="card-body" id="recipe-section"></div>
         </div>
-  
-          </div>
-        </div>
+            
+      </div>
+
     </div>
 
 
@@ -126,7 +109,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script> 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-
  <script src="script.js"></script>
  <script src="ncscript.js"></script>
  
