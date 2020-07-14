@@ -89,17 +89,17 @@ $(document).ready(function() {
       clear();
       var ingredient = $("#main-ingredient").val().trim();
       //If user provides a second ingredient 
-        var ingredient1 = $("#ingredient-2").val().trim();
+      var ingredient1 = $("ingredient-2").val().trim();
 
 
 
       // If a user provides a third ingredient
-          var ingredient2 = $("#ingredient-3").val().trim();
+          var ingredient2 = $("ingredient-3").val().trim();
          
          
          
       // If a user provides a fourth ingredient
-              var ingredient3 = $("#ingredient-4").val().trim();
+              var ingredient3 = $("ingredient-4").val().trim();
               
               
               

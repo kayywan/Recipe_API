@@ -87,24 +87,24 @@ $(document).ready(function() {
       event.preventDefault();
       
       clear();
-      var ingredient = $("#main-ingredient").val().trim();
+      queryParams.q = $("#main-ingredient").val().trim();
       //If user provides a second ingredient 
-        var ingredient1 = $("#ingredient-2").val().trim();
-
-
-
+      var ingredient1 = $("ingredient-2").val().trim();
+      if (parseInt(ingredient1)) {
+          queryParams.ingredient;
+      }
       // If a user provides a third ingredient
-          var ingredient2 = $("#ingredient-3").val().trim();
-         
-         
-         
+          var ingredient2 = $("ingredient-3").val().trim();
+          if (parseInt(ingredient2)) {
+              queryParams.ingredient;
+          }  
       // If a user provides a fourth ingredient
-              var ingredient3 = $("#ingredient-4").val().trim();
-              
-              
-              
+              var ingredient3 = $("ingredient-4").val().trim();
+              if (parseInt(ingredient3)) {
+                  queryParams.ingredient;            
+              }
 
-              var tag = ingredient + "," + ingredient1 + "," + ingredient2 + "," + ingredient3;
+              var tag = ingredient1 + "," + ingredient2 + "," + ingredient3;
 
               
               var settings = {
@@ -125,3 +125,4 @@ $(document).ready(function() {
         });
    
          $("#clear-all").on("click", clear);
+    
