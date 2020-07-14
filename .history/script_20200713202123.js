@@ -7,6 +7,30 @@ $(document).ready(function() {
     console.log("Lets Eat!");
 });
 
+function buildQueryURL() {
+    
+    queryParams.q = $("#main-ingredient").val().trim();
+
+    //If user provides a second ingredient 
+
+    var ingredient1 = $("ingredient-1").val().trim();
+
+    if (parseInt(ingredient1)) {
+        queryParams.ingredient;
+    }
+    // If a user provides a third ingredient
+
+        var ingredient2 = $("ingredient-2").val().trim();
+        if (parseInt(ingredient2)) {
+            queryParams.ingredient;
+        }  
+    // If a user provides a fourth ingredient
+
+            var ingredient3 = $("ingredient-3").val().trim();
+            if (parseInt(ingredient3)) {
+                queryParams.ingredient;            
+            }
+
 /** * takes API data (JSON/object) and turns it into elements on the page
     * @param {object} recipeData - object containing recipe data
 */        
@@ -87,41 +111,23 @@ $(document).ready(function() {
       event.preventDefault();
       
       clear();
-      var ingredient = $("#main-ingredient").val().trim();
-      //If user provides a second ingredient 
-        var ingredient1 = $("#ingredient-2").val().trim();
-
-
-
-      // If a user provides a third ingredient
-          var ingredient2 = $("#ingredient-3").val().trim();
-         
-         
-         
-      // If a user provides a fourth ingredient
-              var ingredient3 = $("#ingredient-4").val().trim();
-              
-              
-              
-
-              var tag = ingredient + "," + ingredient1 + "," + ingredient2 + "," + ingredient3;
-
-              
-              var settings = {
-                "async": true,
-                "crossDomain": true,
-                "url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?number=10&tags=" + tag,
-                "method": "GET",
-                "headers": {
-                    "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-                    "x-rapidapi-key": "ac032b7765msh7b7ea8d251892bbp18630ejsnfccfef5696ae"
-                }
-            }
+var settings = {
+			"async": true,
+			"crossDomain": true,
+			"url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?number=",
+			"method": "GET",
+			"headers": {
+				"x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+				"x-rapidapi-key": "ac032b7765msh7b7ea8d251892bbp18630ejsnfccfef5696ae"
+			}
+		}
+		
+		$.ajax(settings).done(function (response) {
+            console.log(response);
             
-            $.ajax(settings).done(function (response) {
-                console.log(response);
-            });
-
         });
+
+    });
    
          $("#clear-all").on("click", clear);
+    
