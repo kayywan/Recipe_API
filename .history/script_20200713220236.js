@@ -33,11 +33,8 @@ $(document).ready(function() {
         var $recipeListItem = $("<li class='list-group-item recipeTitle'>");
 
         if (title && title.main) {
-            
             console.log(title.main);
-            
             $recipeListItem.append("<span class='label label-primary'>" +
-            
             recipeCount +
             "</span" +
             title.main
@@ -50,7 +47,6 @@ $(document).ready(function() {
 
         if (summary && summary.original) {
             console.log(summary.original);
-            
             $recipeListItem.append("<h5>" + summary.original + "</h5>");
         }
 
@@ -59,7 +55,6 @@ $(document).ready(function() {
         var instructions = recipe.instructions;
 
         if (instructions) {
-            
             $recipeListItem.append("<h5>Section: " + instructions + "</h5>");
         }
 
@@ -67,13 +62,13 @@ $(document).ready(function() {
         var extendedIngredients = recipe.extendedIngredients;
 
         if (extendedIngredients) {
-            
             $recipeListItem.append("<h5>" + recipe.extendedIngredients + "</h5>");
         }
 
         // Append and log URL 
         $recipeListItem.append("<a href='" + recipe.sourceURL + "'>" + recipe.sourceURL + "</a>");
-        
+
+        $recipeList.append($recipeListItem);
     }    
     }
 
@@ -93,24 +88,19 @@ $(document).ready(function() {
       event.preventDefault();
       
       clear();
-      
       var ingredient = $("#main-ingredient").val().trim();
-      
       //If user provides a second ingredient 
-        
-      var ingredient1 = $("#ingredient-2").val().trim();
+        var ingredient1 = $("#ingredient-2").val().trim();
 
 
 
       // If a user provides a third ingredient
-          
-      var ingredient2 = $("#ingredient-3").val().trim();
+          var ingredient2 = $("#ingredient-3").val().trim();
          
          
          
       // If a user provides a fourth ingredient
-              
-      var ingredient3 = $("#ingredient-4").val().trim();
+              var ingredient3 = $("#ingredient-4").val().trim();
               
               
               
@@ -133,7 +123,7 @@ $(document).ready(function() {
             $.ajax(settings).done(function (response) {
                 console.log(response);
             });
-            $()
+
         });
    
          $("#clear-all").on("click", clear);
