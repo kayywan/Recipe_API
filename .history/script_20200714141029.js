@@ -81,9 +81,6 @@ $(document).ready(function() {
         $("#recipe-section").empty();
     }
 
-    
-    
-    
     // Click Handlers
     // ============================================
 
@@ -95,7 +92,7 @@ $(document).ready(function() {
         // Prevents page from reloading on form submit
       event.preventDefault();
       
-      console.log("FOOOOOD!");
+      console.log("FOOD FOOD FOOD");
       clear();
       
       var ingredient = $("#main-ingredient").val().trim();
@@ -112,7 +109,12 @@ $(document).ready(function() {
               
       var ingredient3 = $("#ingredient-4").val().trim();
               
+              
+              
+
               var tag = ingredient + "," + ingredient1 + "," + ingredient2 + "," + ingredient3;
+
+              
 
               var settings = {
                 "async": true,
@@ -131,8 +133,5 @@ $(document).ready(function() {
             // Append recipes from API to the html - #recipe-section
             $()
         });
-        // on("click") function associated with the clear button 
-         
-       function newFunction() {
-           document.getElementById("newForm").reset();
-       }
+   
+         $("#clear-all").on("click", clear);
