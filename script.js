@@ -29,6 +29,7 @@ function updatePage(recipeData) {
         title;
     }
 
+
     // If the recipe has a summary, log and append to recipeList
 
     var summary = recipe.summary;
@@ -37,6 +38,7 @@ function updatePage(recipeData) {
       console.log(summary);
       recipeList += "<h5>" + summary + "</h5>";
     }
+
 
     // Log instructions, and append to document if it exists
 
