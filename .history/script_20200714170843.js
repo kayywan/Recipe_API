@@ -119,11 +119,12 @@ $(document).ready(function () {
       console.log(response);
       updatePage(response);
     });
-  });
 
-  function newFunction() {
-      document.getElementById("newForm").reset();
-  }
+    // 
+    function newFunction() {
+        document.getElementById("newForm").reset();
+    }
+  });
   
   
  
