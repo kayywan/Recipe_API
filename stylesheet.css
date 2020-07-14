@@ -1,12 +1,12 @@
 /* Body font style and font size */
 body {
-    font-size: 3rem;
-    font-family: 'Annie Use Your Telescope', cursive;
-    background-image: url(Assets/carrots-food-fresh-freshness-616404.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+  font-size: 3rem;
+  font-family: "Annie Use Your Telescope", cursive;
+  background-image: url(Assets/carrots-food-fresh-freshness-616404.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 /* Font and image within jumbotron */
@@ -21,17 +21,39 @@ body {
 
 .lead {
     font-size: 3rem;
+
+.header {
+  text-align: center;
+  margin-top: 15rem;
+}
+
+.display-4 {
+  font-size: 7rem;
+}
+
+.lead {
+  font-size: 3rem;
 }
 
 /* Search Results Text */
 .panel-heading {
-    margin-top: 2rem;
-    text-align: center;
+  margin-top: 2rem;
+  text-align: center;
 }
 
 /* Results Area -XXXX */
 .panel-body {
-    text-align: center;
+  text-align: center;
+}
+
+.panel-title {
+  font-size: 45px;
+}
+
+.row {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
 }
 
 .panel-title {
@@ -50,21 +72,26 @@ body {
 }
 
 .card-header {
-    text-align: center;
+  background-color: dodgerblue;
+  color: white;
+}
+
+.card-header {
+  text-align: center;
 }
 
 .container {
-    text-align: center;
+  text-align: center;
 }
 
-  @media screen and (max-width: 768px) {
-    .container {
-      width:100%;
-      margin:0;
-      border-radius:0;
-      
-    }
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
   }
+}
 
-
-
+.row {
+  margin-bottom: 20px;
+}
