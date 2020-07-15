@@ -69,6 +69,10 @@ Our first milestone was clicking the submit button and having the API show up in
 Clicking the search button and having the recipes appear listed within the HTML.
 Clicking the clear button and clearing out the input forms back to empty.
 
+## Deployed
+https://llenrocc.github.io/Recipe_API/
+
+## Credits
 Fonts: <link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Lemon&display=swap" rel="stylesheet">
 
 font-family: 'Annie Use Your Telescope', cursive;
